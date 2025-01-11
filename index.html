@@ -3,22 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro Timer</title>
+    <title>Pomodoro Timers</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Pomodoro Timer</h1>
-        <div class="timer">
-            <span id="minutes">25</span>:<span id="seconds">00</span>
+    <div class="timers-grid">
+        <!-- Default Timer -->
+        <div class="container" data-timer-id="default">
+            <button class="delete-timer">×</button>
+            <h2>Default Timer</h2>
+            <div class="timer">
+                <span class="minutes">25</span>:<span class="seconds">00</span>
+            </div>
+            <div class="controls">
+                <button class="start">Start</button>
+                <button class="pause">Pause</button>
+                <button class="reset">Reset</button>
+            </div>
+            <div class="mode">
+                <span class="mode-text">Work Time</span>
+            </div>
         </div>
-        <div class="controls">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
-            <button id="reset">Reset</button>
+
+        <!-- Add New Timer Button -->
+        <div class="container add-timer">
+            <button class="add-timer-btn">
+                <span class="plus">+</span>
+                <span>Add Timer</span>
+            </button>
         </div>
-        <div class="mode">
-            <span id="mode-text">Work Time</span>
+
+        <!-- Timer Setup Modal -->
+        <div class="setup-modal">
+            <div class="modal-content">
+                <h2>New Timer</h2>
+                <input type="text" id="timer-title" placeholder="Timer Title">
+                <div class="time-input">
+                    <label>Work Time (minutes):</label>
+                    <input type="number" id="work-time" value="25" min="0.1" step="0.1">
+                </div>
+                <div class="time-input">
+                    <label>Break Time (minutes):</label>
+                    <input type="number" id="break-time" value="5" min="0.1" step="0.1">
+                </div>
+                <div class="modal-buttons">
+                    <button id="create-timer">Create</button>
+                    <button id="cancel-timer">Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
