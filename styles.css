@@ -33,11 +33,11 @@ body {
 }
 
 .controls button#reset {
-    background-color: #ff4444;
+    background-color: #4444ff;
 }
 
 .controls button#reset:hover {
-    background-color: #ff0000;
+    background-color: #0000ff;
 }
 
 .controls button:not(#reset):hover {
